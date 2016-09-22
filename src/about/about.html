@@ -1,0 +1,17 @@
+<div class="container">
+	<a ui-sref="books" class="nav-link">Books</a>
+	<a ui-sref="add-book" class="nav-link">Add book</a>
+	<h3>This app is a collection of books using webpack and ES6</h3>
+
+	<div class="col-md-6" ng-repeat="book in books">
+		<div class="panel panel-default">
+  			<div class="panel-heading">
+  				{{book.name}}
+  			</div>
+  			<div class="panel-body">
+    			<p>{{book.description}}</p>
+    			<button class="btn btn-primary">View Details</button>
+  			</div>
+  		</div>
+  	</div>
+</div>

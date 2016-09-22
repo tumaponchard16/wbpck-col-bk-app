@@ -1,0 +1,15 @@
+.books {
+	&__create-input{
+		margin: 0 auto 5px;
+		/*width: 500px;*/
+	}
+
+	&__create-button{
+		display: block;
+		margin: 0 auto 20px;
+	} 
+
+	&__desc{
+		font-size: 12px;
+	}
+}

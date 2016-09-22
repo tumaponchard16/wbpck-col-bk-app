@@ -1,0 +1,33 @@
+<div class="container">
+	<a ui-sref="about" class="nav-link">About</a>
+	<a ui-sref="add-book" class="nav-link">Add book</a>
+
+	<h3>Collection of books</h3> 
+
+	<div class="col-md-10 col-md-offset-1">
+		<form ng-submit="createBook()">
+			<input type="text" 
+				class="form-control books__create-input" 
+				placeholder="Add books"
+				ng-model="createBookInput"> 
+			<button class="btn btn-success books__create-button">Add book</button>
+		</form>
+
+		<div class="row">
+			<div class="col-md-4" ng-repeat="book in books">
+				<div class="panel panel-default">
+		  			<div class="panel-heading">
+		  				{{book.name}}
+		  			</div>
+		  			<div class="panel-body">
+		    			<button class="btn btn-primary" ui-sref="book-detail">View Details</button>
+		                <button class="btn btn-danger"
+		                    ng-click="deleteBook(book)">
+		                    Delete
+		                </button>
+		  			</div>
+		  		</div>
+		  	</div>
+		</div>
+	</div>
+</div>
