@@ -2,4 +2,15 @@
 	<a ui-sref="books" class="nav-link">Books</a>
 	<a ui-sref="add-book" class="nav-link">Add book</a>
 	<h3>This will be the template for the details of the book</h3>
+
+	<div ng-init="getBook()">	
+		{{book.title}}
+		{{book.pages}}
+		{{book.author}}
+		{{book.publisher}}
+		{{book.buy_url}}
+		{{book.img_url}}
+	</div>
+
+	<button class="btn btn-primary" ui-sref="edit-book({id: book._id})">Edit book</button>
 </div>

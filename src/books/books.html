@@ -5,22 +5,27 @@
 	<h3>Collection of books</h3> 
 
 	<div class="col-md-10 col-md-offset-1">
-		<form ng-submit="createBook()">
+		<!-- <form ng-submit="createBook()">
 			<input type="text" 
 				class="form-control books__create-input" 
 				placeholder="Add books"
 				ng-model="createBookInput"> 
 			<button class="btn btn-success books__create-button">Add book</button>
-		</form>
+		</form> -->
 
 		<div class="row">
 			<div class="col-md-4" ng-repeat="book in books">
 				<div class="panel panel-default">
 		  			<div class="panel-heading">
-		  				{{book.name}}
+		  				{{book.title}}
 		  			</div>
 		  			<div class="panel-body">
-		    			<button class="btn btn-primary" ui-sref="book-detail">View Details</button>
+		  			{{book.pages}}
+		  			{{book.author}}
+		  			{{book.publisher}}
+		  			{{book.buy_url}}
+		  			{{book.img_url}}
+		    			<button class="btn btn-primary" ui-sref="book-detail({id: book._id})">View Details</button>
 		                <button class="btn btn-danger"
 		                    ng-click="deleteBook(book)">
 		                    Delete

@@ -1,4 +1,37 @@
 <div class="container">
 	<a ui-sref="books" class="nav-link">Books</a>
-	<h3>This will be the template for adding a book</h3>
+
+	<form ng-submit="createBook()">
+		<input type="text" 
+			class="form-control" 
+			placeholder="Title"
+			ng-model="title"> 
+
+		<input type="text" 
+			class="form-control" 
+			placeholder="Author"
+			ng-model="author">
+
+		<input type="text" 
+			class="form-control" 
+			placeholder="Publisher"
+			ng-model="publisher">
+
+		<input type="text" 
+			class="form-control" 
+			placeholder="Pages"
+			ng-model="pages">
+
+		<input type="text" 
+			class="form-control" 
+			placeholder="Buy URL"
+			ng-model="buy_url">
+
+		<input type="text" 
+			class="form-control" 
+			placeholder="Image URL"
+			ng-model="img_url">
+
+		<button class="btn btn-success books__create-button">Add book</button>
+	</form>
 </div>

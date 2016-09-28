@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export default function($scope, bookFactory) {
+export default function($scope, bookFactory, $stateParams) {
 	let params = {
 		createHasInput: false
 	}
@@ -32,18 +32,23 @@ export default function($scope, bookFactory) {
 	// ];
 
 	bookFactory.getBooks($scope);
+	bookFactory.getBook($scope, $stateParams);
 
 	// $scope.createBook = () => {
 	// 	params.createHasInput = false;
 	// 	$scope.createBookInput = '';
 	// };
-	const { createBook, deleteBook } = bookFactory;
+	const { createBook, deleteBook, updateBook} = bookFactory;
 	
-	$scope.createBook = _.partial(createBook, $scope, params);
+	$scope.createBook = _.partial(createBook, $scope);
 	// $scope.deleteBook = bookToDelete => {
 	// 	_.remove($scope.books, book => book.name === bookToDelete.name);
 	// };
 	$scope.deleteBook = _.partial(deleteBook, $scope);
+	// $scope.getBook = _.partial(getBook, $scope, $stateParams);
+	$scope.updateBook = _.partial(updateBook, $scope);
+
+	// $scope.getBook = _.partial(getBook, $scope);
 
 	$scope.$watch('createBookInput', val => {
 		if (!val && params.createHasInput) {

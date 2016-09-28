@@ -1,0 +1,17 @@
+<div class="container">
+	<a ui-sref="books" class="nav-link">Books</a>
+	<a ui-sref="add-book" class="nav-link">Add book</a>
+	<h3>This will be the template for the details of the book</h3>
+
+	<div>	
+		<form ng-init="getBook()" ng-submit="updateBook(book)"> 
+			<input type="text" class="form-control" ng-model="book.title" placeholder="Title">
+			<input type="text" class="form-control" ng-model="book.author" placeholder="Author">
+			<input type="text" class="form-control" ng-model="book.pages" placeholder="Pages">
+			<input type="text" class="form-control" ng-model="book.publisher" placeholder="Publisher">
+			<input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
+			<input type="text" class="form-control" ng-model="book.img_url" placeholder="Image URL">
+			<button type="submit" class="btn btn-success">Update</button>
+		</form>
+	</div>
+</div>

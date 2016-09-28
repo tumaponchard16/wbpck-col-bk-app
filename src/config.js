@@ -21,9 +21,15 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
 			controller: booksController
 		})
 
-		.state('book-detail', {
-			url: '/book-detail',
+		.state('book-detail', {	
+			url: '/book-detail/:id',
 			template: require('books/book-detail.html'),
+			controller: booksController
+		})
+
+		.state('edit-book', {	
+			url: '/edit-book/:id',
+			template: require('books/edit-book.html'),
 			controller: booksController
 		})
 
